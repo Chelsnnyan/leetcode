@@ -4,8 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        l = len(nums)
-        for x in nums:
-            if nums.count(x) > l//2:
-                return x
+        d = {}
+        for i in nums:
+            if i not in d:
+                d[i]=1
+            else:
+                d[i]+=1
+            if d[i]>len(nums)/2:
+                return i
+        return 0
         
